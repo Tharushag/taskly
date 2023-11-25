@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-$primary-color: #252525;
+$bg: #252525;
+$black: #1E1E1E;
 
 body {
-  background-color: $primary-color;
+  background-color: $bg;
+  color: white;
+}
+
+nav {
+  background-color: $black;
 }
