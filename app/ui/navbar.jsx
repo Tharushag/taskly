@@ -22,7 +22,7 @@ function NavBar() {
    !shadow-none !hover:shadow-none !active:shadow-none`;
 
   return (
-    <nav className="px-6 py-4 rounded-[25px] md:rounded-[30px] flex justify-between items-center relative z-50">
+    <nav className="px-6 py-4 rounded-[25px] md:rounded-[30px] flex justify-between items-center relative z-50 mb-6">
       <Link className="font-semibold text-2xl flex items-center z-20" href="/">Taskly</Link>
       <IconButton aria-label="Menu" className="z-20 text-white md:hidden" onClick={handleNav}>
         <MenuIcon />
