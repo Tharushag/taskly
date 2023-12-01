@@ -15,6 +15,7 @@ const projects = {
         "due": "11/26/2023",
       }
     ],
+    "Job search": [],
 };
 
 export default projects;

@@ -16,3 +16,18 @@ body {
 nav {
   background-color: $black;
 }
+
+/* width */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.classic-input {
+  background-color: transparent;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 1px white;
+    outline: none;
+  }
+}
