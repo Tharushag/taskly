@@ -7,10 +7,12 @@ $black: #1E1E1E;
 
 body {
   background-color: $bg;
+  box-sizing: border-box;
+  color: white;
   display: grid;
   grid-template-rows: auto 1fr;
-  color: white;
   min-height: 100vh;
+  padding: 2rem;
 }
 
 nav {

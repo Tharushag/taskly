@@ -19,6 +19,10 @@ function Tab(props) {
   const [hover, setHover] = useState(false);
   const [input, setInput] = useState(props.title);
 
+  useEffect(() => {
+    setInput(props.title);
+  }, [props.title]);
+
   return (
     <div className="relative">
       <Button
@@ -31,7 +35,7 @@ function Tab(props) {
         )}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        onClick={() => { props.handleClick(props.id) }}
+        onClick={() => props.handleClick(props.id)}
       >
         <input className="classic-input" value={input} onInput={handleInput} />
 
@@ -56,6 +60,7 @@ function Tab(props) {
         tabIndex="0"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        onClick={() => props.del(props.id)}
       >
         <DeleteOutlineRoundedIcon className="font-light" />
       </span>
