@@ -1,27 +1,21 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import clsx from 'clsx';
 import Button from '@mui/material/Button';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import TextBox from '@/app/ui/TextBox';
 
 import { montserrat } from '@/app/ui/fonts';
 
 function Tab(props) {
-
-  const handleInput = ({ target }) => setInput(target.value);
 
   const handleMouseOver = () => setHover(true);
 
   const handleMouseOut = () => setHover(false);
 
   const [hover, setHover] = useState(false);
-  const [input, setInput] = useState(props.title);
-
-  useEffect(() => {
-    setInput(props.title);
-  }, [props.title]);
 
   return (
     <div className="relative">
@@ -37,7 +31,7 @@ function Tab(props) {
         onMouseOut={handleMouseOut}
         onClick={() => props.handleClick(props.id)}
       >
-        <input className="classic-input" value={input} onInput={handleInput} />
+        <TextBox text={props.title} />
 
         <span
           className="bg-[#464646] rounded-xl flex items-center justify-center p-1 invisible pointer-events-none"

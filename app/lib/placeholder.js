@@ -1,5 +1,5 @@
 const projects = {
-    "Web developement": [
+    "Web development": [
       {
         "text": "Design landing page",
         "due": "11/26/2023",

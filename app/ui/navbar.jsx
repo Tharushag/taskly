@@ -27,7 +27,8 @@ function NavBar() {
       <IconButton aria-label="Menu" className="z-20 text-white md:hidden" onClick={handleNav}>
         <MenuIcon />
       </IconButton>
-      <ul className={`bg-[#1E1E1E] grid md:flex absolute justify-center transition-all duration-400 inset-x-0 top-8 gap-4 md:p-0 flex-row md:static z-10 rounded-3xl ${nav ? openedNavStyles : closedNavStyles}`}>
+      <ul className={`bg-[#1E1E1E] grid md:flex absolute justify-center transition-all duration-400 inset-x-0 top-8 gap-4 
+      md:p-0 flex-row md:static z-10 rounded-3xl ${nav ? openedNavStyles : closedNavStyles}`}>
         <li className="flex justify-center overflow-hidden">
           <Link href="/login">
             <Button

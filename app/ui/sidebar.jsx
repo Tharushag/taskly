@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import Tab from "@/app/ui/tab";
 import projects from "@/app/lib/placeholder";
 
@@ -40,7 +40,7 @@ function SideBar() {
   }
 
   return (
-    <div className="bg-[#1E1E1E] rounded-3xl w-80 p-6 h-[calc(100vh-172px)] overflow-y-auto hide-scrollbar 
+    <div className="bg-[#1E1E1E] rounded-3xl min-w-[320px] p-6 h-[calc(100vh-172px)] overflow-y-auto hide-scrollbar 
     flex flex-col gap-4 box-border">
       {createTabs()}
 
@@ -49,7 +49,7 @@ function SideBar() {
         className="w-fit bg-[#2D2D2D] hover:bg-[#333333] rounded-2xl p-3"
         onClick={addProject}
       >
-        <AddIcon className="text-white opacity-70 text-lg" />
+        <AddRoundedIcon className="text-white opacity-70 text-lg" />
       </IconButton>      
     </div>
   );
