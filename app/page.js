@@ -1,6 +1,5 @@
 import SideBar from "@/app/ui/sidebar";
 import Task from "@/app/ui/task";
-import projects from "@/app/lib/placeholder";
 
 export default function Home() {
 

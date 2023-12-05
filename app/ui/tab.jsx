@@ -5,7 +5,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import Button from '@mui/material/Button';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
-import TextBox from '@/app/ui/TextBox';
+import TextBox from '@/app/ui/textBox';
 
 import { montserrat } from '@/app/ui/fonts';
 
@@ -31,7 +31,7 @@ function Tab(props) {
         onMouseOut={handleMouseOut}
         onClick={() => props.handleClick(props.id)}
       >
-        <TextBox text={props.title} />
+        <TextBox name="project" text={props.title} />
 
         <span
           className="bg-[#464646] rounded-xl flex items-center justify-center p-1 invisible pointer-events-none"

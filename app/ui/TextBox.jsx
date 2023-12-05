@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-function TextBox({ text, disabled, style="" }) {
+function TextBox({ text, disabled, name, style="" }) {
   useEffect(() => {
     setInput(text);
   }, [text]);
@@ -11,7 +11,7 @@ function TextBox({ text, disabled, style="" }) {
   const handleInput = ({ target }) => setInput(target.value);
 
   return (
-    <input className={`classic-input ${style}`} value={input} onInput={handleInput} disabled={disabled} />
+    <input className={`classic-input ${style}`} value={input} onInput={handleInput} disabled={disabled} name={name} />
   );
 }
 

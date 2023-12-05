@@ -6,8 +6,8 @@ import clsx from 'clsx';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import CustomIconButton from "@/app/ui/custom-icon-button";
 import Checkbox from "@/app/ui/checkbox";
-import TextBox from '@/app/ui/TextBox';
-import DatePicker from '@/app/ui/datepicker';
+import TextBox from '@/app/ui/textBox';
+import CustomDatePicker from '@/app/ui/custom-date-picker';
 
 function Task() {
   const [complete, setComplete] = useState(false);
@@ -32,10 +32,11 @@ function Task() {
         )}
         text="Hello World!"
         disabled={complete ? true : false}
+        name="task"
       />
 
       <div className="flex gap-2">
-        <DatePicker disabled={complete} />
+        <CustomDatePicker disabled={complete} />
 
         <CustomIconButton disabled={complete}>
           <DeleteOutlineRoundedIcon className="text-white text-xl" />
