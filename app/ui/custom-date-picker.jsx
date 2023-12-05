@@ -10,8 +10,9 @@ import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import clsx from 'clsx';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import OutsideClick from '@/app/ui/outsideClick';
+import useWindowDimensions from './use-window-dimensions';
 
 const darkTheme = createTheme({
   palette: {
@@ -27,8 +28,14 @@ function CustomDatePicker({disabled}) {
   const [value, setValue] = useState(dayjs());
   const handleChange = (newValue) => setValue(newValue);
 
+  const error = console.error;
+  console.error = (...args) => {
+    if (/defaultProps/.test(args[0])) return;
+    error(...args);
+  };
+
   return (
-    <div className="relative z-10">
+    <div className="md:relative z-10">
       <OutsideClick onClick={closeDatePicker}>
         <IconButton 
           disabled={disabled} 
@@ -39,12 +46,16 @@ function CustomDatePicker({disabled}) {
         </IconButton>
 
         <div className={clsx(
-          "absolute top-10 right-0",
+          "absolute z-10 top-32 left-[50%] translate-x-[-50%] md:translate-x-0 md:top-10 md:left-[initial] md:right-0",
           {"hidden": !open},
         )}>
           <ThemeProvider theme={darkTheme}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <StaticDatePicker value={value} onChange={handleChange} />
+              <StaticDatePicker
+                value={value} 
+                onChange={handleChange} 
+                onAccept={closeDatePicker}
+              />
             </LocalizationProvider>
           </ThemeProvider>
         </div>
