@@ -20,8 +20,12 @@ const darkTheme = createTheme({
 
 function DatePicker({disabled}) {
   const [open, setOpen] = useState(false);
+  
+  const [value, setValue] = useState(dayjs());
 
   const openDatePicker = () => setOpen(!open)
+
+  const handleChange = (newValue) => setValue(newValue);
 
   return (
     <div className="relative z-10">
@@ -39,7 +43,7 @@ function DatePicker({disabled}) {
       )}>
         <ThemeProvider theme={darkTheme}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <StaticDatePicker defaultValue={dayjs('2022-04-17')} />
+            <StaticDatePicker value={value} onChange={handleChange} />
           </LocalizationProvider>
         </ThemeProvider>
       </div>
